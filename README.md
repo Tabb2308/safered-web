@@ -1,5 +1,7 @@
 # SafeRed
 
+### 👉 [Ver la página en vivo: tabb2308.github.io/safered-web](https://tabb2308.github.io/safered-web/)
+
 Landing page de **SafeRed**: gasfitería e instalaciones de redes de gas y agua en la Región Metropolitana, con Instalador Certificado SEC.
 
 Sitio estático en un solo archivo (`index.html`), sin dependencias ni proceso de compilación. Pensado primero para celular.
