@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SafeRed | Gasfitería certificada SEC en la Región Metropolitana</title>
+<meta name="description" content="Instalación de redes de gas y agua, calefonts bajo norma y emergencias. Instalador Certificado SEC con más de 5 años de experiencia. Cotiza por WhatsApp.">
+<meta name="theme-color" content="#0a2a57">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72' width='72' height='72'%3E%3Crect width='72' height='72' rx='16' fill='%230a2a57'/%3E%3Cg transform='translate(8.00 8.00) scale(0.7777777777777778)'%3E%3Cpath d='M50 18H28a10 10 0 0 0 0 20h8' fill='none' stroke='%23ff8a4c' stroke-width='8'/%3E%3Cpath d='M36 38h8a10 10 0 0 1 0 20H22' fill='none' stroke='%2335c3f0' stroke-width='8'/%3E%3Crect x='50' y='12' width='6' height='12' rx='1.5' fill='%23ffffff'/%3E%3Crect x='16' y='52' width='6' height='12' rx='1.5' fill='%23ffffff'/%3E%3Crect x='33' y='32' width='6' height='12' rx='1.5' fill='%23ffffff'/%3E%3Cpath d='M64 1c3.5 5 6 8 6 12.5a6.5 6.5 0 0 1-13 0c0-3 1.6-5 3-7 .4 2.4 1.5 3.6 3 3.8-.9-3-.6-6 1-9.3Z' fill='%23ff8a4c'/%3E%3Cpath d='M8 55s-5.5 6.3-5.5 10a5.5 5.5 0 0 0 11 0C13.5 61.3 8 55 8 55Z' fill='%2335c3f0'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="img/logo/apple-touch-icon.png">
+<!-- Vista previa al compartir por WhatsApp / redes. TODO: subir img/og-safered.jpg (1200x630) y poner la URL final -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="SafeRed | Gasfitería certificada SEC">
+<meta property="og:description" content="Redes de gas y agua, calefonts bajo norma y emergencias. Cotiza por WhatsApp con una foto.">
+<meta property="og:image" content="img/og-safered.jpg">
+<meta property="og:locale" content="es_CL">
+<!-- Datos para Google (negocio local). TODO: agregar "url" cuando exista el dominio -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Plumber","name":"SafeRed",
+ "description":"Gasfitería e instalaciones de redes de gas y agua. Instalador Certificado SEC.",
+ "telephone":"+56926351188",
+ "address":{"@type":"PostalAddress","addressLocality":"La Granja","addressRegion":"Región Metropolitana","addressCountry":"CL"},
+ "areaServed":{"@type":"AdministrativeArea","name":"Región Metropolitana de Santiago"}}
+</script>
+<script>document.documentElement.className+=" js"</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-900:#0a2a57;   /* azul profundo: títulos y texto de marca */
+    --blue-700:#0b5bd3;   /* azul vivo: energía, fondos destacados */
+    --blue-50:#eaf2fe;
+    --cyan:#12a8dc;       /* agua: solo en detalles e íconos */
+    --orange:#ea5a12;     /* gas / acción: botones */
+    --orange-700:#c9470a;
+    --orange-50:#fff1e8;
+    --wa:#1fa855;         /* verde WhatsApp: solo botón flotante */
+    --ink:#0f1b2d;
+    --muted:#4a5a70;
+    --line:#dbe3ee;
+    --bg:#f5f7fa;
+    --surface:#ffffff;
+    --r:14px;             /* radio de tarjetas; botones = píldora */
+    --shadow:0 10px 30px -12px rgba(11,47,91,.28);
+    --tabler:https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/;
+  }
+  *{box-sizing:border-box;margin:0}
+  [hidden]{display:none!important}
+  /* Nada puede ensanchar la página (iOS estira los iframes según el contenido) */
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  @supports (overflow:clip){html,body{overflow-x:clip}}
+  .hero-grid>*,.bento>*,.cov-grid>*,.cta-card>*,.process>li{min-width:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+  p{text-wrap:pretty}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  /* Títulos: Archivo ensanchado (técnico, sólido). Texto: ancho normal (lectura) */
+  h1,h2,h3{line-height:1.08;letter-spacing:-.025em;color:var(--blue-900);font-stretch:118%;text-wrap:balance}
+  h2{font-size:clamp(1.75rem,4.8vw,2.6rem);font-weight:800}
+  h3{font-stretch:110%;letter-spacing:-.015em}
+  .lead{color:var(--muted);max-width:60ch}
+
+  /* Íconos Tabler vía máscara: 1 request liviano por ícono, color = currentColor */
+  .i{display:inline-block;width:24px;height:24px;flex:none;background:currentColor;
+     -webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+  .i-flame{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/flame.svg)}
+  .i-drop{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/droplet.svg)}
+  .i-urgent{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/urgent.svg)}
+  .i-temp{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/temperature.svg)}
+  .i-cert{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/certificate.svg)}
+  .i-shield{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/shield-check.svg)}
+  .i-phone{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/phone.svg)}
+  .i-wa{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/brand-whatsapp.svg)}
+  .i-pin{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/map-pin.svg)}
+  .i-tool{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/tool.svg)}
+  .i-camera{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/camera.svg)}
+  .i-down{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/chevron-down.svg)}
+
+  /* Botones: píldora, mínimo 52px de alto (zona de pulgar) */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;
+       border-radius:999px;font-family:inherit;font-weight:600;font-size:1.02rem;line-height:1;font-stretch:108%;letter-spacing:-.005em;text-decoration:none;border:2px solid transparent;
+       cursor:pointer;white-space:nowrap;transition:transform .15s ease,background-color .2s ease,box-shadow .2s ease}
+  .btn:active{transform:scale(.97)}
+  .btn:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+  .btn-primary{background:linear-gradient(135deg,#f5731f,var(--orange-700));color:#fff;box-shadow:0 10px 24px -8px rgba(234,90,18,.65)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px -8px rgba(234,90,18,.75)}
+  .btn-primary .i{transition:transform .25s ease}
+  .btn-primary:hover .i{transform:rotate(-12deg) scale(1.1)}
+  .btn-ghost{background:var(--surface);color:var(--blue-900);border-color:var(--blue-900)}
+  .btn-ghost:hover{background:var(--blue-50)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.4rem;letter-spacing:-.035em;font-stretch:125%;text-decoration:none;color:var(--blue-900)}
+  .logo b{color:var(--orange);font-weight:800}
+  .logo .mark{width:36px;height:36px;flex:none}
+  /* Nombre en mayúsculas con leve inclinación, como el logo oficial */
+  .logo .wm{display:inline-block;transform:skewX(-10deg);color:var(--blue-700);letter-spacing:-.02em}
+  .nav-links{display:none;gap:28px;font-weight:500;color:var(--muted)}
+  .nav-links a{text-decoration:none}
+  .nav-links a:hover{color:var(--blue-900)}
+  .call{min-height:44px;padding:0 18px;font-size:.95rem}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:28px 0 40px;background:
+      radial-gradient(60% 50% at 100% 0%,rgba(18,168,220,.14),transparent 70%),
+      radial-gradient(50% 45% at 0% 100%,rgba(234,90,18,.10),transparent 70%),
+      linear-gradient(180deg,#fff 0%,var(--bg) 100%)}
+  .hero-grid{position:relative;z-index:1;display:grid;gap:32px;align-items:center}
+  /* Cañerías de agua (celeste) y gas (naranjo) con flujo animado: la metáfora de la marca */
+  .pipes{position:absolute;left:0;bottom:0;width:100%;max-width:100%;height:70%;overflow:hidden;pointer-events:none;z-index:0}
+  .pipes path{fill:none;stroke-linecap:round}
+  .pipes .base{stroke-width:12;opacity:.10}
+  .pipes .flow{stroke-width:5;stroke-dasharray:2 28;opacity:.55}
+  .pipes .water{stroke:var(--cyan)}
+  .pipes .gas{stroke:var(--orange)}
+  @keyframes flow{to{stroke-dashoffset:-300}}
+  .pipes .flow.water{animation:flow 6s linear infinite}
+  .pipes .flow.gas{animation:flow 8s linear infinite reverse}
+  .photo-wrap{position:relative}
+  .photo-wrap::before{content:"";position:absolute;inset:-12px 8px 12px -8px;border-radius:calc(var(--r) + 4px);
+      background:linear-gradient(135deg,var(--orange),#f7a23b);opacity:.9;z-index:-1;transform:rotate(2.5deg)}
+  .sec-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:999px;background:var(--blue-50);border:1px solid #c9d9ee;color:var(--blue-900);font-weight:600;font-size:.92rem}
+  .sec-badge .seal{width:32px;height:32px;border-radius:50%;background:var(--blue-900);color:#fff;display:grid;place-items:center}
+  .sec-badge .seal .i{width:18px;height:18px}
+  .hero h1{font-size:clamp(2.15rem,7.6vw,3.7rem);font-weight:800;font-stretch:125%;letter-spacing:-.035em;margin:18px 0 14px}
+  /* Subrayado tipo marcador que se dibuja después de la entrada */
+  .hero h1 em{font-style:normal;color:var(--orange);background:linear-gradient(rgba(234,90,18,.18),rgba(234,90,18,.18)) left 88% / 100% .28em no-repeat}
+  .js .hero h1 em{background-size:0% .28em;animation:mark .9s cubic-bezier(.16,1,.3,1) .7s forwards}
+  @keyframes mark{to{background-size:100% .28em}}
+  .hero .lead{font-size:1.12rem}
+  /* Los botones se ponen lado a lado solo si caben; si no, uno bajo el otro */
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .hero-ctas .btn{flex:1 1 250px}
+  .hero-visual{position:relative}
+  .photo{aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:
+      radial-gradient(120% 90% at 85% 10%,rgba(232,86,28,.35),transparent 55%),
+      linear-gradient(145deg,var(--blue-700),var(--blue-900));
+      display:grid;place-items:center;color:rgba(255,255,255,.75);box-shadow:var(--shadow)}
+  .photo>*{grid-area:1/1}
+  .photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+  .photo .ph{display:grid;justify-items:center;gap:8px;font-size:.9rem;text-align:center;padding:16px}
+  .photo .ph .i{width:48px;height:48px}
+  .seal-card{position:absolute;z-index:2;left:16px;bottom:-22px;display:flex;align-items:center;gap:12px;background:var(--surface);
+      border-radius:var(--r);padding:12px 16px;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .seal-card .seal{width:46px;height:46px;border-radius:50%;background:var(--orange-50);color:var(--orange);display:grid;place-items:center;border:2px solid var(--orange)}
+  .seal-card strong{display:block;color:var(--blue-900);font-size:1rem;line-height:1.2}
+  .seal-card span{font-size:.85rem;color:var(--muted)}
+
+  /* Franja de confianza */
+  .trust{padding:48px 0 8px}
+  .trust ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .trust li{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--blue-900);font-size:.98rem;line-height:1.25}
+  .trust li .i{color:var(--orange);width:26px;height:26px}
+  .trust .big{font-size:2.1rem;font-weight:800;font-stretch:125%;letter-spacing:-.04em;color:var(--orange);line-height:1}
+
+  section{scroll-margin-top:72px}
+  .block{padding:64px 0}
+
+  /* Servicios: bento asimétrico */
+  .services-head{margin-bottom:28px;display:grid;gap:10px}
+  .bento{display:grid;gap:14px}
+  .svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:10px;align-content:start;
+       transition:transform .2s ease,box-shadow .2s ease}
+  .svc:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .svc .ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--blue-50);color:var(--blue-700)}
+  .svc h3{font-size:1.25rem;font-weight:700}
+  .svc p{color:var(--muted);font-size:.98rem}
+  .svc .ico .i{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+  .svc:hover .ico .i{transform:scale(1.18) rotate(-8deg)}
+  .svc-emergency{position:relative;overflow:hidden;background:linear-gradient(150deg,var(--blue-700) 0%,var(--blue-900) 100%);border-color:transparent;color:#fff}
+  .svc-emergency::after{content:"";position:absolute;right:-90px;bottom:-90px;width:240px;height:240px;border-radius:50%;
+      background:radial-gradient(circle,rgba(234,90,18,.4),transparent 65%);pointer-events:none}
+  .svc-emergency h3{color:#fff;font-size:1.5rem}
+  .svc-emergency p{color:#dce8fb}
+  .svc-emergency .ico{position:relative;background:var(--orange);color:#fff}
+  /* Pulso solo en emergencias: comunica urgencia real */
+  .svc-emergency .ico::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid var(--orange);animation:ping 1.8s cubic-bezier(0,0,.2,1) infinite}
+  @keyframes ping{75%,100%{transform:scale(1.7);opacity:0}}
+  .svc-water .ico{background:#dff4fc;color:#0a7fa8}
+  .svc-emergency .btn{margin-top:8px;justify-self:start}
+  .svc-gas{background:linear-gradient(180deg,var(--orange-50),#fff 70%)}
+  .svc-gas .ico{background:#ffe0d1;color:var(--orange-700)}
+
+  .seal-card a{display:inline-block;margin-top:2px;font-size:.84rem;font-weight:600;color:var(--blue-700)}
+
+  /* Mientras llegamos: consejo dentro de la tarjeta de emergencias */
+  .tip-box{position:relative;z-index:1;margin-top:6px;padding:12px 14px;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);font-size:.92rem;color:#eef4ff;line-height:1.45}
+  .tip-box strong{color:#fff}
+
+  /* Así trabajamos: proceso unido por una "cañería" con flujo */
+  .process{list-style:none;padding:0;margin-top:32px;display:grid;gap:26px;position:relative}
+  .process::before{content:"";position:absolute;left:25px;top:26px;bottom:26px;width:4px;border-radius:4px;
+      background:repeating-linear-gradient(180deg,var(--cyan) 0 3px,transparent 3px 20px),rgba(18,168,220,.15);
+      background-size:100% 20px,100% 100%;animation:pipe-v 1.4s linear infinite}
+  @keyframes pipe-v{to{background-position:0 20px,0 0}}
+  .process li{position:relative;display:grid;grid-template-columns:54px 1fr;column-gap:16px;align-items:start}
+  .process .dot{width:54px;height:54px;border-radius:50%;background:var(--surface);border:2px solid var(--blue-700);color:var(--blue-700);display:grid;place-items:center;grid-row:span 2}
+  .process li:last-child .dot{background:var(--orange);border-color:var(--orange);color:#fff}
+  .process h3{font-size:1.15rem;margin-top:4px}
+  .process p{color:var(--muted);font-size:.96rem;margin-top:4px}
+  .i-receipt{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/receipt.svg)}
+  .i-search{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/search.svg)}
+
+  /* Galería: grilla asimétrica, 6 fotos que llenan exactamente la grilla */
+  .gallery{margin-top:28px;display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:170px;grid-auto-flow:dense;gap:10px}
+  .shot{position:relative;padding:0;border:0;border-radius:var(--r);overflow:hidden;cursor:zoom-in;background:var(--blue-50)}
+  .shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+  .shot:hover img{transform:scale(1.05)}
+  .shot:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+  .shot.tall{grid-row:span 2}
+  .shot.wide{grid-column:span 2}
+  .lightbox{margin:auto;border:0;padding:0;border-radius:var(--r);max-width:min(92vw,900px);max-height:92dvh;background:var(--surface);overflow:hidden}
+  .lightbox::backdrop{background:rgba(10,42,87,.82)}
+  .lightbox img{display:block;max-width:100%;max-height:72dvh;margin:0 auto;object-fit:contain;background:#0a1a33}
+  .lightbox p{padding:14px 18px 0;font-weight:600;color:var(--blue-900)}
+  .lightbox .btn{margin:14px 18px 18px;min-height:44px}
+
+  /* Cobertura */
+  .coverage{background:var(--blue-50);border-block:1px solid #d6e3f3}
+  .cov-grid{display:grid;gap:28px}
+  .base{display:flex;gap:14px;align-items:center;background:var(--surface);border-radius:var(--r);padding:18px;border:1px solid var(--line);margin-top:22px}
+  .base .ico{width:48px;height:48px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center}
+  .base strong{display:block;color:var(--blue-900);font-size:1.15rem}
+  .base span{color:var(--muted);font-size:.95rem}
+  .chips-title{font-weight:700;color:var(--blue-900);margin-bottom:12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
+  .chips li{padding:9px 16px;border-radius:999px;background:var(--surface);border:1px solid #c9d9ee;font-weight:500;color:var(--blue-900);font-size:.95rem}
+  .checker{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:10px;box-shadow:var(--shadow)}
+  .checker .chips-title{margin:0}
+  .cov-result{display:grid;gap:12px;padding:14px;border-radius:10px;background:var(--blue-50);color:var(--blue-900);font-weight:600;line-height:1.4}
+  .cov-result.miss{background:var(--orange-50);color:var(--ink);font-weight:500}
+  .cov-result .btn{justify-self:start}
+  .cov-head{display:grid;gap:10px;margin-bottom:28px}
+  .checker .base{margin-top:4px;box-shadow:none;background:var(--bg)}
+  .i-gps{--i:url(https://cdn.jsdelivr.net/npm/@tabler/icons@3.19.0/icons/outline/current-location.svg)}
+  #geo-btn.loading .i{animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* Mapa de comunas (SVG propio, sin servicios externos) */
+  .map-card{position:relative;background:linear-gradient(160deg,#f4f9ff,#e3eefc);border:1px solid #cfe0f5;border-radius:var(--r);padding:10px;box-shadow:var(--shadow)}
+  #rm-map{display:block;width:100%;height:auto;aspect-ratio:1000/844;touch-action:manipulation}
+  .cm{fill:#cfe0f7;stroke:#fff;stroke-width:1.1;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill .25s ease}
+  .cm:hover{fill:#a9c8f1}
+  .cm.base{fill:#ffc9a8}
+  .cm.sel{fill:var(--blue-700)}
+  .cm.base.sel{fill:var(--orange)}
+  .route{fill:none;stroke:var(--orange);stroke-linecap:round;stroke-dasharray:1 10;vector-effect:non-scaling-stroke;stroke-width:4;animation:flow 3s linear infinite}
+  .pin-base{fill:var(--orange);stroke:#fff;vector-effect:non-scaling-stroke;stroke-width:2.5}
+  .pin-user{fill:var(--blue-700);stroke:#fff;vector-effect:non-scaling-stroke;stroke-width:2.5}
+  .pin-ring{fill:none;stroke:var(--orange);vector-effect:non-scaling-stroke;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:ring 2s ease-out infinite}
+  .pin-ring.user{stroke:var(--blue-700)}
+  @keyframes ring{from{transform:scale(1);opacity:.9}to{transform:scale(3);opacity:0}}
+  .map-reset{position:absolute;top:18px;right:18px;border:1px solid var(--line);background:var(--surface);color:var(--blue-900);font:inherit;font-weight:600;font-size:.88rem;padding:8px 14px;border-radius:999px;cursor:pointer;box-shadow:var(--shadow)}
+  .map-legend{display:flex;gap:16px;flex-wrap:wrap;padding:8px 6px 2px;font-size:.85rem;color:var(--muted)}
+  .map-legend span{display:inline-flex;align-items:center;gap:6px}
+  .lg{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .lg-base{background:var(--orange)}
+  .lg-sel{background:var(--blue-700)}
+
+  /* FAQ */
+  .faq-wrap{max-width:780px}
+  .faq{margin-top:26px;display:grid;gap:10px}
+  details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:600;color:var(--blue-900);font-size:1.05rem;line-height:1.35;min-height:56px}
+  summary::-webkit-details-marker{display:none}
+  summary .i{color:var(--orange);transition:transform .2s ease}
+  details[open] summary .i{transform:rotate(180deg)}
+  details p{padding:0 20px 20px;color:var(--muted)}
+  details p strong{color:var(--ink)}
+
+  /* CTA final */
+  .cta-card{background:linear-gradient(150deg,var(--blue-700),var(--blue-900) 70%);border-radius:calc(var(--r) + 6px);padding:28px 20px;color:#fff;display:grid;gap:28px;box-shadow:var(--shadow)}
+  .cta-card h2{color:#fff}
+  .cta-card .lead{color:#d3def0;margin-top:10px}
+  .cta-points{list-style:none;padding:0;margin-top:22px;display:grid;gap:12px}
+  .cta-points li{display:flex;gap:12px;align-items:center;color:#e8eef8}
+  .cta-points .i{color:#ffb38f}
+  form{background:var(--surface);border-radius:var(--r);padding:22px;color:var(--ink);display:grid;gap:16px}
+  .field{display:grid;gap:6px}
+  label{font-weight:600;font-size:.95rem;color:var(--blue-900)}
+  .opt{font-weight:400;color:var(--muted)}
+  input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid #9fb0c6;border-radius:10px;padding:12px 14px;min-height:50px;width:100%}
+  textarea{min-height:88px;resize:vertical}
+  input::placeholder,textarea::placeholder{color:#66768b}
+  .err{color:#b42318;font-size:.88rem;display:none}
+  .field.invalid input,.field.invalid select{border-color:#b42318}
+  .field.invalid .err{display:block}
+  form .btn{width:100%}
+  .form-note{font-size:.85rem;color:var(--muted);text-align:center}
+
+  footer{padding:36px 0 110px;color:var(--muted);font-size:.92rem}
+  .foot{display:grid;gap:14px}
+  .foot a{color:var(--blue-900);font-weight:600}
+
+  /* Botón flotante WhatsApp: fijo en todas las pantallas */
+  .wa-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:30;display:flex;align-items:center;gap:10px;
+          height:60px;padding:0 20px 0 16px;border-radius:999px;background:var(--wa);color:#fff;text-decoration:none;font-weight:700;
+          box-shadow:0 12px 28px -8px rgba(18,110,55,.6);transition:transform .15s ease}
+  .wa-fab .i{width:30px;height:30px}
+  .wa-fab.nudge{animation:nudge .9s ease 2}
+  @keyframes nudge{0%,100%{transform:none}20%{transform:translateY(-6px) rotate(-4deg)}40%{transform:translateY(0) rotate(4deg)}60%{transform:rotate(-2deg)}}
+  .wa-tip{position:fixed;right:16px;bottom:calc(88px + env(safe-area-inset-bottom));z-index:30;max-width:230px;background:var(--surface);
+          color:var(--ink);padding:12px 14px;border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);font-size:.92rem;line-height:1.35;
+          opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .35s ease,transform .35s ease}
+  .wa-tip strong{color:var(--blue-900)}
+  .wa-tip.show{opacity:1;transform:none}
+
+  /* Entrada del hero y aparición al hacer scroll (solo si hay JS) */
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .js .rise{opacity:0;animation:rise .8s cubic-bezier(.16,1,.3,1) forwards;animation-delay:var(--d,0s)}
+  .js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);transition-delay:var(--d,0s)}
+  .js [data-reveal].in{opacity:1;transform:none}
+  .wa-fab:active{transform:scale(.95)}
+  .wa-fab:hover{background:#178f47}
+
+  @media (min-width:768px){
+    .trust ul{grid-template-columns:repeat(4,1fr)}
+    .bento{grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto auto}
+    .svc-emergency{grid-row:span 2;padding:32px;align-content:end;min-height:340px}
+    .svc-calefont{grid-column:1 / -1;grid-template-columns:auto 1fr;column-gap:18px;align-items:center}
+    .svc-calefont .ico{grid-row:span 2}
+    .cov-grid{grid-template-columns:.85fr 1.15fr;align-items:start}
+    .gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px}
+    .process{grid-template-columns:repeat(4,1fr);gap:24px}
+    .process::before{left:27px;right:calc(25% - 27px);top:25px;bottom:auto;width:auto;height:4px;
+        background:repeating-linear-gradient(90deg,var(--cyan) 0 3px,transparent 3px 20px),rgba(18,168,220,.15);
+        background-size:20px 100%,100% 100%;animation-name:pipe-h}
+    @keyframes pipe-h{to{background-position:20px 0,0 0}}
+    .process li{grid-template-columns:1fr;row-gap:14px}
+    .process .dot{grid-row:auto}
+    .cta-card{grid-template-columns:1fr 1fr;padding:44px;align-items:center}
+    footer{padding-bottom:40px}
+    .foot{grid-template-columns:1fr auto;align-items:center}
+  }
+  @media (min-width:1024px){
+    .nav{height:72px}
+    .nav-links{display:flex}
+    .hero{padding:56px 0 72px}
+    .hero-grid{grid-template-columns:1.1fr .9fr;gap:56px}
+    .block{padding:88px 0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+    .js .rise,.js [data-reveal]{opacity:1;transform:none}
+    .js .hero h1 em{background-size:100% .28em}
+  }
+</style>
+</head>
+<body>
+<!-- Símbolo SafeRed: cañería en S con llama (gas) y gota (agua) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="sr-mark"><path d="M50 18H28a10 10 0 0 0 0 20h8" fill="none" stroke="#ea5a12" stroke-width="8"/><path d="M36 38h8a10 10 0 0 1 0 20H22" fill="none" stroke="#0b5bd3" stroke-width="8"/><rect x="50" y="12" width="6" height="12" rx="1.5" fill="#0a2a57"/><rect x="16" y="52" width="6" height="12" rx="1.5" fill="#0a2a57"/><rect x="33" y="32" width="6" height="12" rx="1.5" fill="#0a2a57"/><path d="M64 1c3.5 5 6 8 6 12.5a6.5 6.5 0 0 1-13 0c0-3 1.6-5 3-7 .4 2.4 1.5 3.6 3 3.8-.9-3-.6-6 1-9.3Z" fill="#ea5a12"/><path d="M8 55s-5.5 6.3-5.5 10a5.5 5.5 0 0 0 11 0C13.5 61.3 8 55 8 55Z" fill="#12a8dc"/></g></defs></svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#inicio" aria-label="SafeRed, inicio">
+      <svg class="mark" viewBox="0 0 72 72" aria-hidden="true"><use href="#sr-mark"/></svg><span class="wm">SAFE<b>RED</b></span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <a class="btn btn-ghost call js-tel" href="tel:+56926351188"><span class="i i-phone"></span>Llamar</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <svg class="pipes" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="base water" d="M-40 250 C 180 250 260 150 440 150 S 720 310 920 230 S 1140 110 1260 130"/>
+      <path class="flow water" d="M-40 250 C 180 250 260 150 440 150 S 720 310 920 230 S 1140 110 1260 130"/>
+      <path class="base gas" d="M-40 330 C 170 330 300 230 490 240 S 770 370 990 300 S 1170 200 1260 215"/>
+      <path class="flow gas" d="M-40 330 C 170 330 300 230 490 240 S 770 370 990 300 S 1170 200 1260 215"/>
+    </svg>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="sec-badge rise"><span class="seal"><span class="i i-cert"></span></span>Instalador Certificado SEC</span>
+        <h1 class="rise" style="--d:.08s">Gas y agua en tu hogar, <em>instalados con seguridad.</em></h1>
+        <p class="lead rise" style="--d:.16s">Un equipo con más de 5 años de experiencia y certificación SEC. Envíanos una foto y te respondemos rápido.</p>
+        <div class="hero-ctas rise" style="--d:.24s">
+          <a class="btn btn-primary js-wa" data-msg="Hola SafeRed, quiero cotizar un trabajo. Les envío fotos del problema." href="https://wa.me/56926351188"><span class="i i-wa"></span>Cotizar por WhatsApp</a>
+          <a class="btn btn-ghost js-tel" href="tel:+56926351188"><span class="i i-urgent"></span>Emergencia: llamar</a>
+        </div>
+      </div>
+      <div class="hero-visual rise" style="--d:.3s">
+        <div class="photo-wrap"><div class="photo">
+          <img src="img/hero-equipo.webp" alt="Integrante del equipo SafeRed trabajando en una central de calefones" width="960" height="720" fetchpriority="high" onerror="this.remove()">
+          <div class="ph"><span class="i i-tool"></span>SafeRed en terreno</div>
+        </div></div>
+        <div class="seal-card">
+          <span class="seal"><span class="i i-cert"></span></span>
+          <div>
+            <strong>Instalador de Gas SEC</strong>
+            <span>Clase 3 · Licencia activa</span><br>
+            <!-- Enlace del QR del certificado SEC (ficha pública en el registro eRNII) -->
+            <a class="js-sec" href="https://wlhttp.sec.cl/rnii/public/licencia/qr?o=db11d8bd03751cca54aa786d9d57029c" target="_blank" rel="noopener">Verificar en la SEC</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Franja de confianza -->
+  <div class="trust">
+    <div class="wrap">
+      <ul>
+        <li data-reveal><span class="big">+5</span>años de experiencia</li>
+        <li data-reveal style="--d:.08s"><span class="i i-cert"></span>Certificado por la SEC</li>
+        <li data-reveal style="--d:.16s"><span class="i i-tool"></span>Trabajos bajo norma vigente</li>
+        <li data-reveal style="--d:.24s"><span class="i i-camera"></span>Cotiza con una foto</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 2. SERVICIOS -->
+  <section class="block" id="servicios">
+    <div class="wrap">
+      <div class="services-head" data-reveal>
+        <h2>Lo que resolvemos en tu casa</h2>
+        <p class="lead">Instalaciones seguras y respaldadas, hechas por un equipo con certificación SEC.</p>
+      </div>
+      <div class="bento">
+        <article class="svc svc-emergency" data-reveal>
+          <span class="ico"><span class="i i-urgent"></span></span>
+          <h3>Emergencias de gas y agua</h3>
+          <p>Cañería rota, calefont que no enciende o llave de paso dañada. Mándanos una foto y coordinamos la visita de inmediato.</p>
+          <p class="tip-box"><strong>Mientras llegamos:</strong> si hay agua corriendo, cierra la llave de paso general (suele estar junto al medidor).</p>
+          <a class="btn btn-primary js-wa" data-msg="Hola SafeRed, tengo una emergencia. Mi comuna es: " href="https://wa.me/56926351188"><span class="i i-wa"></span>Pedir ayuda ahora</a>
+        </article>
+        <article class="svc svc-gas" data-reveal style="--d:.1s">
+          <span class="ico"><span class="i i-flame"></span></span>
+          <h3>Redes de gas</h3>
+          <p>Instalación y mantención de redes de gas natural y licuado, según la normativa SEC vigente.</p>
+        </article>
+        <article class="svc svc-water" data-reveal style="--d:.2s">
+          <span class="ico"><span class="i i-drop"></span></span>
+          <h3>Redes de agua</h3>
+          <p>Instalación de agua fría y caliente para tu hogar: cocina, baño y lavadero.</p>
+        </article>
+        <article class="svc svc-calefont" data-reveal style="--d:.1s">
+          <span class="ico"><span class="i i-temp"></span></span>
+          <h3>Instalación de calefonts</h3>
+          <p>Ubicación, ventilación y ducto de evacuación según normativa vigente. Tu calefont funcionando seguro desde el primer día.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería de trabajos reales -->
+  <section class="block" id="trabajos" style="padding-top:0">
+    <div class="wrap">
+      <h2 data-reveal>Nuestro equipo en terreno</h2>
+      <p class="lead" data-reveal style="margin-top:10px">Trabajos reales de SafeRed. Toca una foto para verla completa.</p>
+      <div class="gallery" data-reveal style="--d:.1s">
+        <button class="shot tall" type="button" data-cap="Nuestro equipo renovando cañerías bajo piso">
+          <img src="img/trabajo-equipo.webp" alt="Dos integrantes del equipo SafeRed trabajando en cañerías bajo piso" width="562" height="1000" loading="lazy"></button>
+        <button class="shot wide" type="button" data-cap="Tramo de red de gas instalado en losa">
+          <img src="img/trabajo-gas-losa.webp" alt="Cañería de gas amarilla instalada en una losa" width="1000" height="750" loading="lazy"></button>
+        <button class="shot" type="button" data-cap="Conexiones de gas y agua de un calefont">
+          <img src="img/trabajo-calefont.webp" alt="Conexiones de gas y agua bajo un calefont" width="563" height="1000" loading="lazy"></button>
+        <button class="shot" type="button" data-cap="Red de agua en cobre con llave de paso">
+          <img src="img/trabajo-agua-cobre.webp" alt="Cañería de cobre con llave de paso empotrada en muro" width="750" height="1000" loading="lazy"></button>
+        <button class="shot" type="button" data-cap="Unión de red de agua en muro">
+          <img src="img/trabajo-union.webp" alt="Unión de cañería de cobre con conexión azul en muro de ladrillo" width="750" height="1000" loading="lazy"></button>
+        <button class="shot" type="button" data-cap="Conexión al medidor de agua">
+          <img src="img/trabajo-medidor.webp" alt="Conexión nueva al medidor de agua de una vivienda" width="872" height="1000" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+    <img id="lb-img" alt="">
+    <p id="lb-cap"></p>
+    <button class="btn btn-ghost" id="lb-close" type="button">Cerrar</button>
+  </dialog>
+
+  <!-- Así trabajamos -->
+  <section class="block" id="proceso" style="padding-top:0">
+    <div class="wrap">
+      <h2 data-reveal>Así trabajamos</h2>
+      <p class="lead" data-reveal style="margin-top:10px">Sabes qué se hará y cuánto cuesta antes de que empecemos.</p>
+      <ol class="process">
+        <li data-reveal><span class="dot"><span class="i i-camera"></span></span>
+          <h3>Mándanos una foto</h3><p>Por WhatsApp, junto a tu comuna. Así entendemos el problema antes de ir.</p></li>
+        <li data-reveal style="--d:.1s"><span class="dot"><span class="i i-receipt"></span></span>
+          <h3>Recibe tu cotización</h3><p>Precio claro y por escrito antes de empezar. Sin sorpresas al final.</p></li>
+        <li data-reveal style="--d:.2s"><span class="dot"><span class="i i-tool"></span></span>
+          <h3>Instalamos bajo norma</h3><p>Trabajos a cargo de un Instalador Certificado SEC, con materiales adecuados.</p></li>
+        <li data-reveal style="--d:.3s"><span class="dot"><span class="i i-cert"></span></span>
+          <h3>Entregamos funcionando</h3><p>Probamos la instalación antes de irnos para que quede operando de forma segura.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 3. COBERTURA -->
+  <section class="block coverage" id="cobertura">
+    <div class="wrap">
+      <div class="cov-head" data-reveal>
+        <h2>Llegamos a toda la Región Metropolitana</h2>
+        <p class="lead">Las 52 comunas, desde nuestra base en La Granja. Busca tu comuna, tócala en el mapa o usa tu ubicación.</p>
+      </div>
+      <div class="cov-grid">
+        <div class="checker" data-reveal>
+          <label class="chips-title" for="f-busca">¿Llegamos a tu comuna?</label>
+          <input id="f-busca" list="comunas-rm" placeholder="Escribe tu comuna, ej: Maipú" autocomplete="off" enterkeyhint="search">
+          <datalist id="comunas-rm"></datalist>
+          <button class="btn btn-ghost" id="geo-btn" type="button"><span class="i i-gps"></span><span id="geo-label">Usar mi ubicación</span></button>
+          <div id="cov-result" class="cov-result" aria-live="polite" hidden></div>
+          <div class="base">
+            <span class="ico"><span class="i i-pin"></span></span>
+            <div><strong>Base en La Granja</strong><span>Coordinamos la visita según tu dirección.</span></div>
+          </div>
+        </div>
+        <div class="map-card" data-reveal style="--d:.12s">
+          <svg id="rm-map" viewBox="0 0 1000 844" role="img" aria-label="Mapa de las 52 comunas de la Región Metropolitana"></svg>
+          <button class="map-reset" id="map-reset" type="button" hidden>Ver toda la región</button>
+          <div class="map-legend" aria-hidden="true"><span><i class="lg lg-base"></i>Base La Granja</span><span><i class="lg lg-sel"></i>Tu comuna</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FAQ -->
+  <section class="block" id="preguntas">
+    <div class="wrap faq-wrap">
+      <h2 data-reveal>Preguntas frecuentes</h2>
+      <div class="faq" data-reveal style="--d:.1s">
+        <details open>
+          <summary>¿Qué significa que el equipo cuente con Instalador Certificado SEC?<span class="i i-down"></span></summary>
+          <p>Que los trabajos de gas están a cargo de un instalador autorizado por la Superintendencia de Electricidad y Combustibles. Es tu garantía de que el trabajo se hace según la ley y no a la pasada. No tienes que creernos: puedes <a class="js-sec" href="https://wlhttp.sec.cl/rnii/public/licencia/qr?o=db11d8bd03751cca54aa786d9d57029c" target="_blank" rel="noopener" style="color:var(--blue-700);font-weight:600">verificar nuestra licencia en la SEC</a>.</p>
+        </details>
+        <details>
+          <summary>¿Por qué importa que el calefont se instale bajo norma?<span class="i i-down"></span></summary>
+          <p>Porque la ubicación, la ventilación y el ducto de evacuación de gases son clave para tu seguridad. Una instalación bajo norma protege a tu familia y te evita problemas con la distribuidora de gas.</p>
+        </details>
+        <details>
+          <summary>¿Cómo cotizo un trabajo?<span class="i i-down"></span></summary>
+          <p>Escríbenos por WhatsApp con una foto del problema o del lugar de la instalación y tu comuna. Con eso te damos una cotización o coordinamos una visita.</p>
+        </details>
+        <details>
+          <summary>¿Atienden emergencias?<span class="i i-down"></span></summary>
+          <p>Sí. Llámanos o escríbenos por WhatsApp y te decimos altiro cuánto tardamos en llegar a tu dirección.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CTA FINAL -->
+  <section class="block" id="contacto" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-card" data-reveal>
+        <div>
+          <h2>Resuelve tu problema hoy</h2>
+          <p class="lead">Déjanos tus datos y el mensaje se envía directo a nuestro WhatsApp. Sin esperas ni correos.</p>
+          <ul class="cta-points">
+            <li><span class="i i-cert"></span>Instalador Certificado SEC</li>
+            <li><span class="i i-camera"></span>Adjunta fotos en el chat para cotizar más rápido</li>
+            <li><span class="i i-phone"></span>¿Es urgente? <a class="js-tel" href="tel:+56926351188" style="color:#fff;font-weight:700">Llámanos directo</a></li>
+          </ul>
+        </div>
+        <form id="lead" novalidate>
+          <div class="field">
+            <label for="f-nombre">Nombre</label>
+            <input id="f-nombre" name="nombre" autocomplete="given-name" placeholder="Ej: Carolina" required>
+            <span class="err">Cuéntanos tu nombre.</span>
+          </div>
+          <div class="field">
+            <label for="f-comuna">Comuna</label>
+            <select id="f-comuna" name="comuna" required>
+              <option value="">Selecciona tu comuna</option>
+            </select>
+            <span class="err">Selecciona tu comuna.</span>
+          </div>
+          <div class="field">
+            <label for="f-servicio">¿Qué necesitas?</label>
+            <select id="f-servicio" name="servicio" required>
+              <option value="">Selecciona un servicio</option>
+              <option>Emergencia</option>
+              <option>Instalación de calefont</option>
+              <option>Red de gas</option>
+              <option>Red de agua</option>
+            </select>
+            <span class="err">Elige un servicio.</span>
+          </div>
+          <div class="field">
+            <label for="f-detalle">Detalle <span class="opt">(opcional)</span></label>
+            <textarea id="f-detalle" name="detalle" placeholder="Ej: el calefont no enciende desde ayer"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit"><span class="i i-wa"></span>Enviar por WhatsApp</button>
+          <a id="wa-fallback" class="btn btn-ghost" href="#" target="_blank" rel="noopener" hidden>Abrir WhatsApp con mi mensaje</a>
+          <p class="form-note">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="logo" href="#inicio" style="font-size:1.2rem"><svg class="mark" style="width:30px;height:30px" viewBox="0 0 72 72" aria-hidden="true"><use href="#sr-mark"/></svg><span class="wm">SAFE<b>RED</b></span></a>
+      <p style="margin-top:8px">Gasfitería e instalaciones de gas y agua. Equipo con Instalador Certificado SEC. La Granja, Región Metropolitana.</p>
+    </div>
+    <a class="js-tel" href="tel:+56926351188">+56 9 2635 1188</a>
+  </div>
+</footer>
+
+<a class="wa-fab js-wa" data-msg="Hola SafeRed, necesito ayuda con " href="https://wa.me/56926351188" aria-label="Escríbenos por WhatsApp">
+  <span class="i i-wa"></span>WhatsApp
+</a>
+<div class="wa-tip" id="wa-tip" role="status"><strong>¿Tienes una urgencia?</strong> Mándanos una foto por WhatsApp y te respondemos.</div>
+
+<!-- Comunas RM: fuente github.com/caracena/chile-geojson (simplificado) -->
+<script type="application/json" id="rm-data">{"w":1000,"h":844,"k":0.8338858220671682,"minx":-59.801697969189505,"miny":32.92247903243697,"s":616.596414877656,"c":[{"n":"San Joaquín","p":"Santiago","r":[[561,340,563,348,564,348,566,361,567,363,567,364,563,365,559,367,554,368,553,361,551,342,559,339,560,338]]},{"n":"San Miguel","p":"Santiago","r":[[554,368,543,365,536,363,545,342,551,342]]},{"n":"San Ramón","p":"Santiago","r":[[554,368,556,382,557,392,545,390,550,367]]},{"n":"Independencia","p":"Santiago","r":[[543,294,544,298,546,298,546,305,547,305,547,314,542,313,536,311,536,310,533,305,532,298,531,296,536,294,539,295,539,294]]},{"n":"La Cisterna","p":"Santiago","r":[[546,385,546,386,539,385,529,380,531,377,536,363,543,365,550,367]]},{"n":"Peñalolén","p":"Santiago","r":[[578,362,583,350,587,331,593,333,604,333,608,335,609,331,631,333,639,341,644,341,649,345,656,348,656,351,655,351,650,354,642,351,640,353,636,353,632,357,625,355,616,357,612,361,603,364]]},{"n":"Providencia","p":"Santiago","r":[[581,314,582,315,577,324,573,322,569,323,564,324,563,324,557,325,555,317,554,313,556,308,562,304,564,301,566,300,570,300,569,304,572,305]]},{"n":"La Reina","p":"Santiago","r":[[631,333,609,331,608,335,604,333,602,334,598,333,593,333,587,331,588,327,587,318,582,315,581,314,604,312,605,315,613,314,617,316,620,316,623,319,624,321,626,323,626,326,630,329]]},{"n":"Calera de Tango","p":"Maipo","r":[[469,460,465,450,464,445,462,444,461,444,452,456,436,449,447,439,457,424,462,415,463,414,464,415,466,414,471,401,476,404,481,399,490,402,492,402,494,405,499,415,494,420,498,429,492,431,503,446,502,453,500,457,496,457,478,451,471,460]]},{"n":"Colina","p":"Chacabuco","r":[[474,154,479,154,484,156,486,156,489,158,493,159,498,153,504,149,499,138,494,135,494,130,491,126,494,121,491,112,497,97,497,90,487,82,488,78,491,75,490,69,494,63,492,60,496,55,491,51,490,42,485,38,490,35,497,27,502,27,510,19,515,21,518,23,526,20,535,23,542,19,550,18,554,15,559,17,561,16,566,18,569,12,571,12,575,15,576,16,574,19,577,23,577,29,584,35,587,40,591,42,595,47,595,50,598,52,600,57,597,69,599,72,601,73,610,80,615,96,620,103,634,98,636,94,636,90,642,87,646,76,652,69,658,61,662,61,664,64,667,63,676,69,676,73,675,74,678,79,675,82,672,88,679,93,679,97,683,99,682,103,689,113,685,115,683,119,677,123,667,124,661,128,657,136,655,138,653,146,648,151,648,154,644,157,645,164,641,168,641,172,642,173,638,183,633,182,624,184,620,183,618,184,616,191,612,195,602,195,601,196,594,197,593,201,594,203,589,206,586,212,588,219,586,226,577,232,577,235,575,238,573,237,571,239,576,252,576,255,574,256,563,259,556,258,553,259,550,259,543,250,531,252,527,250,527,248,523,246,518,244,516,244,517,247,512,249,479,160]]},{"n":"Santiago","p":"Santiago","r":[[546,314,555,317,560,337,560,338,559,339,552,342,536,341,536,343,531,343,532,342,536,342,536,338,532,338,532,337,533,326,532,326,532,322,526,322,526,319,529,318,530,317,531,317,532,318,532,313,533,311,536,312,536,311]]},{"n":"Lampa","p":"Chacabuco","r":[[474,154,479,160,512,248,474,258,471,257,471,260,468,265,464,269,460,271,453,283,450,285,438,279,431,278,428,280,423,279,415,275,396,283,395,285,392,285,384,280,382,276,375,270,374,263,369,259,366,251,368,236,375,232,380,230,384,227,382,225,378,213,367,185,367,178,369,170,368,166,371,161,371,157,375,157,377,154,380,154,386,157,391,154,398,157,403,163,414,160,422,159,424,164,422,178,426,180,425,186,428,189,428,188,436,187,441,174,444,170,444,164,441,160,452,159,457,162,460,157,466,154,469,154,471,152]]},{"n":"Pirque","p":"Cordillera","r":[[658,574,655,572,650,577,644,577,638,580,637,577,637,571,631,560,628,559,623,562,612,561,611,556,606,547,606,541,600,539,594,532,585,531,579,532,576,530,573,517,570,514,568,507,566,503,565,493,562,491,562,487,559,484,554,482,550,477,550,475,544,464,546,457,552,455,558,443,563,445,575,441,577,441,580,439,583,439,585,435,590,433,590,431,599,429,604,430,608,428,615,428,615,426,620,426,620,423,625,423,624,419,631,414,634,414,635,412,638,413,645,412,644,406,649,407,650,405,653,405,656,427,658,430,662,430,665,440,672,446,665,455,661,455,659,458,660,463,656,466,655,469,658,476,671,482,675,485,676,487,674,490,675,496,673,499,674,506,676,510,674,513,674,522,672,525,672,532,674,535,673,539,674,544,672,561,670,565,666,566,662,572]]},{"n":"Puente Alto","p":"Cordillera","r":[[631,383,630,393,624,401,627,418,624,419,625,423,620,423,620,426,615,426,615,428,609,427,604,430,599,429,595,431,591,430,590,433,585,435,583,439,581,439,577,441,575,441,570,443,566,443,563,445,558,443,557,444,559,429,559,421,570,419,567,400,573,398,577,399,581,399,581,397,595,394,589,386,598,386,600,388,611,383,622,385,625,383]]},{"n":"Huechuraba","p":"Santiago","r":[[527,274,525,265,528,259,532,256,531,252,533,251,543,250,550,259,553,259,556,258,563,259,575,256,578,257,579,261,582,264,577,267,572,271,574,273,573,281,571,284,572,287,569,293,568,298,550,283,531,274]]},{"n":"San Bernardo","p":"Maipo","r":[[487,401,508,371,529,380,525,391,524,391,521,401,534,407,541,409,537,422,551,424,551,435,558,435,557,444,548,448,544,449,541,452,535,455,516,458,510,474,503,478,487,484,472,498,465,502,463,511,459,513,457,509,457,505,460,502,458,492,461,492,464,493,467,492,468,487,475,477,472,469,468,462,469,460,471,460,479,451,492,457,500,457,503,449,503,446,499,439,492,431,498,429,494,420,499,415,493,403]]},{"n":"Curacaví","p":"Melipilla","r":[[369,170,367,179,367,185,376,205,382,225,384,227,380,230,375,232,368,236,366,251,369,259,374,263,375,270,382,276,384,280,395,285,392,294,392,302,395,305,394,314,393,317,391,318,391,324,393,327,394,337,404,342,408,348,403,357,404,361,409,363,404,385,399,390,394,393,392,388,387,385,381,384,375,385,369,380,360,381,354,372,349,369,345,359,335,352,336,343,330,337,333,331,334,325,336,321,337,313,321,322,315,323,311,320,308,323,305,323,294,324,291,325,288,323,284,324,282,323,278,325,271,327,270,321,268,320,264,320,258,316,249,315,248,312,244,310,238,302,236,301,232,302,225,297,225,295,229,291,231,286,236,284,242,284,246,278,248,279,253,278,254,270,257,267,256,263,259,255,258,252,261,252,262,246,267,240,267,239,262,238,258,230,257,224,253,220,253,216,251,214,254,208,251,200,254,196,257,195,257,192,270,188,280,190,282,189,284,187,289,189,295,194,305,190,310,184,319,183,330,190,336,186,338,174,343,177,346,175,348,176,350,178,350,180,353,181,354,173,356,172,359,173,360,171]]},{"n":"María Pinto","p":"Melipilla","r":[[360,381,351,388,337,391,333,391,327,387,321,389,312,386,308,390,302,386,292,387,289,390,283,390,280,389,275,390,269,385,260,382,256,384,257,388,254,387,253,390,249,395,245,394,247,397,245,399,242,397,242,402,237,404,238,407,226,406,219,411,214,411,211,408,205,411,202,410,198,408,197,397,199,393,197,383,195,382,197,378,192,375,189,375,187,374,188,361,187,359,188,356,186,352,193,341,192,338,193,332,195,329,193,325,194,320,191,314,192,311,191,304,195,303,196,300,200,299,202,301,210,300,214,303,223,301,225,297,232,302,236,301,241,305,244,310,248,312,249,315,258,316,264,320,268,320,270,321,271,327,278,325,282,323,284,324,288,323,291,325,294,324,306,323,311,320,315,323,321,322,337,313,336,321,334,325,333,331,330,337,336,343,335,352,345,359,349,369,354,372]]},{"n":"Cerrillos","p":"Santiago","r":[[529,343,529,345,526,352,519,371,518,375,508,371,512,365,510,362,501,362,504,354,505,353,505,345,507,346,508,345,509,345,510,340,516,345,526,343]]},{"n":"Cerro Navia","p":"Santiago","r":[[511,317,510,318,509,318,506,317,501,317,501,313,498,313,492,311,489,312,487,310,487,311,483,310,479,305,479,303,482,303,485,303,490,302,495,302,503,302,507,303,510,302,513,304]]},{"n":"Vitacura","p":"Santiago","r":[[615,278,611,280,607,284,602,287,580,297,573,300,570,300,566,300,567,299,568,298,569,293,572,287,571,284,572,283,573,281,573,279,574,277,574,273,572,271,574,270,577,267,580,266,582,264,585,265,587,267,590,267,591,268,593,269,599,269,599,270,600,272,603,276,608,276,612,276,614,276]]},{"n":"Conchalí","p":"Santiago","r":[[540,294,539,294,539,295,536,294,531,296,527,288,521,274,525,273,531,274,544,280,543,281,544,290,543,294]]},{"n":"El Bosque","p":"Santiago","r":[[541,409,534,407,521,401,523,396,524,391,525,391,529,382,528,382,529,380,538,384,539,385,546,386]]},{"n":"Estación Central","p":"Santiago","r":[[531,343,526,343,516,345,510,339,504,337,505,336,506,328,516,330,519,330,518,327,518,325,526,324,526,322,532,322,532,326,533,326,532,337,532,338,536,338,536,342,532,342]]},{"n":"La Florida","p":"Santiago","r":[[656,351,656,356,643,366,640,373,635,376,635,379,631,381,631,383,625,383,622,385,611,383,600,388,598,386,589,386,595,394,581,397,581,399,577,399,573,398,567,400,567,394,568,394,565,385,568,385,568,372,566,361,603,364,612,361,616,357,625,355,632,357,636,353,640,353,642,351,650,354]]},{"n":"La Granja","p":"Santiago","r":[[554,368,559,367,563,365,567,364,568,372,568,385,565,385,567,390,557,393,556,382]]},{"n":"La Pintana","p":"Santiago","r":[[557,392,557,393,567,390,568,394,567,394,568,410,569,410,570,419,559,421,559,429,558,435,551,435,551,430,550,430,551,424,537,422,541,408,545,390]]},{"n":"Las Condes","p":"Santiago","r":[[615,278,628,273,636,274,637,275,634,277,633,282,636,291,648,293,648,305,653,309,658,311,660,318,659,321,661,330,658,336,658,344,656,346,656,348,652,347,644,341,637,340,632,334,630,329,626,326,626,323,620,316,613,314,605,315,604,312,581,314,569,304,570,300,602,287]]},{"n":"Lo Barnechea","p":"Santiago","r":[[658,344,658,336,661,330,658,312,653,309,648,305,648,293,636,291,633,282,634,277,637,275,637,274,632,272,628,273,615,278,612,276,603,276,599,269,587,267,579,262,578,257,575,256,576,252,571,239,573,237,575,238,577,235,577,232,586,226,588,219,586,212,589,206,594,203,593,201,594,197,601,196,602,195,612,195,616,191,618,184,620,183,624,184,633,182,638,183,642,173,641,172,641,168,645,164,644,157,648,154,648,151,653,146,655,138,657,136,661,128,667,124,677,123,683,119,685,115,687,115,689,113,694,114,701,113,705,111,705,108,708,107,712,111,717,112,718,115,722,115,725,118,727,117,731,128,733,129,742,129,742,143,745,151,744,160,748,162,756,163,760,172,763,174,765,178,770,182,770,185,767,190,768,194,774,202,773,208,776,210,780,216,778,220,779,227,785,236,788,246,788,256,791,261,789,264,790,268,788,271,783,274,782,280,780,283,777,289,772,292,770,295,769,302,760,309,756,317,751,319,749,321,744,322,736,329,735,327,729,326,725,334,720,335,716,339,710,342,702,350,701,350,700,348,696,348,688,345,679,350,675,350,666,345,662,346]]},{"n":"Lo Espejo","p":"Santiago","r":[[536,363,529,380,518,375,518,372,524,358]]},{"n":"Lo Prado","p":"Santiago","r":[[507,329,502,327,501,323,501,317,506,317,509,318,510,318,511,317,518,318,518,325,519,330,515,330]]},{"n":"Macul","p":"Santiago","r":[[585,338,583,350,580,356,578,362,566,361,564,348,563,348,561,341,574,340,579,340]]},{"n":"Maipú","p":"Santiago","r":[[504,338,510,340,509,345,505,345,505,353,501,362,510,362,512,365,487,400,478,398,462,383,467,378,468,375,466,374,464,375,461,380,448,377,443,379,439,375,431,376,425,373,423,369,416,363,414,362,408,363,404,361,403,357,408,349,423,343,431,342,445,344,449,336,461,336,467,332,468,333,472,333,472,332,482,333,483,330,488,331,489,334,502,337,503,338]]},{"n":"Ñuñoa","p":"Santiago","r":[[585,338,579,340,574,340,561,341,560,338,560,337,557,325,563,324,564,324,566,324,566,323,569,323,573,322,577,324,582,315,587,318,588,327]]},{"n":"Pedro Aguirre Cerda","p":"Santiago","r":[[536,363,524,358,529,345,529,343,536,343,536,341,545,342]]},{"n":"Pudahuel","p":"Santiago","r":[[493,284,479,298,479,305,485,310,501,313,502,327,506,328,505,336,503,338,502,337,489,334,488,331,483,330,482,333,472,332,472,333,468,333,467,332,461,336,449,336,445,344,431,342,423,343,408,349,404,342,394,337,393,332,393,327,390,322,391,318,393,317,394,314,395,305,392,302,392,294,394,286,396,283,415,275,423,279,428,280,431,278,438,279,450,285,453,283,460,271,464,269,468,264]]},{"n":"Quilicura","p":"Santiago","r":[[524,283,519,284,516,289,503,290,501,288,496,287,495,286,486,280,468,264,471,260,471,257,474,258,505,250,517,247,516,244,518,244,523,246,527,248,527,250,531,252,532,256,528,259,525,265,527,274,521,274,525,283,525,284]]},{"n":"Quinta Normal","p":"Santiago","r":[[525,304,526,306,536,311,536,312,534,311,532,312,532,313,532,318,531,317,530,317,529,318,526,319,526,324,518,325,518,318,511,317,513,304,510,301,515,299,519,299]]},{"n":"Recoleta","p":"Santiago","r":[[547,314,547,305,546,305,546,298,544,298,543,295,544,290,543,281,544,280,550,283,560,291,568,298,567,299,564,301,562,304,556,308,554,313,555,317]]},{"n":"Renca","p":"Santiago","r":[[524,283,524,284,525,284,524,283,525,283,532,298,533,305,536,311,526,306,524,302,519,299,515,299,507,303,503,302,495,302,490,302,485,303,482,303,479,303,479,298,493,284,495,286,496,287,497,288,501,288,503,290,505,289,506,289,507,290,507,289,508,289,510,290,512,289,513,288,516,289,519,284]]},{"n":"El Monte","p":"Talagante","r":[[384,433,384,438,388,447,391,450,400,454,400,457,384,465,375,472,366,475,362,479,360,483,356,485,353,491,346,489,340,491,332,493,327,492,322,489,315,483,316,475,309,469,313,470,317,439,321,438,325,435,330,435,335,438,337,441,343,440,349,444,352,436,353,434,358,435,361,434,366,427,370,426,379,429]]},{"n":"Padre Hurtado","p":"Talagante","r":[[401,410,400,404,394,397,394,393,399,390,404,385,409,363,414,362,416,363,423,369,425,373,431,376,439,375,443,379,448,377,457,379,461,380,464,375,466,374,468,375,467,378,462,383,478,398,481,399,476,404,471,401,464,415,463,414,460,417,452,409,454,408,453,407,446,406,445,403,441,403,435,403,430,408,428,406,426,407,425,406,422,412,408,409,403,411]]},{"n":"Peñaflor","p":"Talagante","r":[[446,406,453,407,454,408,452,409,460,417,457,424,445,440,432,437,413,440,412,443,402,442,401,446,393,446,387,443,384,433,385,432,390,426,391,421,393,417,400,413,401,410,403,411,408,409,422,412,425,406,426,407,428,406,430,408,435,403,445,403]]},{"n":"Talagante","p":"Talagante","r":[[469,460,468,462,472,469,475,477,468,487,467,492,464,493,461,492,458,492,455,491,448,485,445,489,419,477,410,490,400,492,390,488,387,489,380,489,373,494,369,494,358,490,354,489,356,485,360,483,361,481,366,475,375,472,384,465,400,457,400,454,390,449,388,444,393,446,401,446,402,442,412,443,413,440,432,437,445,440,436,449,452,456,461,444,464,445,465,450]]},{"n":"Paine","p":"Maipo","r":[[566,503,568,507,570,514,573,517,576,530,579,532,585,531,594,532,600,539,606,541,606,547,611,556,612,561,623,562,628,559,631,560,637,571,637,579,630,579,627,578,623,580,622,582,622,588,619,594,616,595,612,594,609,594,603,591,596,591,585,601,582,601,579,598,573,599,564,604,560,611,554,613,550,624,545,626,541,626,536,624,529,617,526,610,521,606,517,606,512,613,509,615,508,614,506,617,499,618,492,629,486,630,472,622,468,625,467,631,464,633,461,633,457,636,453,635,444,640,441,644,442,645,441,647,421,657,415,651,410,652,404,649,402,651,396,649,394,647,389,647,385,644,391,628,387,624,388,617,381,606,379,585,377,575,378,568,373,563,376,542,387,537,393,540,407,542,410,539,413,521,416,529,416,539,418,543,422,542,422,545,425,547,432,548,433,547,436,550,440,550,449,558,453,559,454,561,460,560,462,558,465,560,469,558,478,562,490,548,492,551,495,524,502,525,501,534,520,535,520,537,526,536,528,516,537,514,544,507,552,510,556,510,562,502]]},{"n":"Isla de Maipo","p":"Talagante","r":[[422,542,418,543,416,539,416,529,413,521,410,539,407,542,393,540,387,537,377,541,376,525,374,527,370,526,369,528,364,524,357,523,354,519,349,517,346,514,339,512,327,514,320,509,310,506,306,504,305,499,313,492,317,489,318,486,316,483,322,489,327,492,336,492,346,489,351,492,356,489,372,494,380,489,387,489,390,488,400,492,411,490,419,477,445,489,446,485,449,486,458,493,460,502,457,505,457,509,459,513,455,520,451,522,450,525,440,533,438,538,430,544]]},{"n":"Buin","p":"Maipo","r":[[566,503,562,502,556,510,552,510,544,507,537,514,528,516,526,536,520,537,520,535,501,534,502,525,495,524,492,551,490,548,478,562,469,558,465,560,462,558,460,560,454,561,453,559,449,558,446,554,440,550,436,550,434,547,428,548,422,545,422,544,423,542,430,544,438,538,440,533,450,525,453,520,457,518,459,513,463,511,464,503,466,501,472,498,487,484,503,478,510,474,516,458,535,455,541,452,544,449,548,448,557,444,555,451,552,455,546,457,544,464,550,475,550,477,554,482,558,483,562,487,562,491,565,493]]},{"n":"San José de Maipo","p":"Cordillera","r":[[866,842,858,838,854,837,854,824,856,815,856,804,845,789,842,786,834,790,824,789,821,782,812,781,806,775,806,771,802,764,797,763,799,757,797,751,799,747,809,739,807,736,800,733,797,726,797,724,800,722,797,714,793,709,794,706,792,700,794,693,789,687,786,684,776,686,771,683,758,685,756,686,754,700,747,708,745,708,742,705,734,701,726,702,725,705,723,705,720,700,712,701,707,697,706,691,704,689,711,677,716,674,713,671,716,665,714,660,712,653,706,652,702,647,701,644,703,641,703,638,695,633,688,620,687,614,689,610,692,607,690,603,691,600,688,596,689,593,685,590,680,592,676,590,670,585,666,576,658,574,662,572,666,566,670,565,672,561,674,544,673,539,674,535,672,532,672,525,674,522,674,513,676,510,674,506,673,499,675,496,674,490,676,487,675,485,671,482,658,476,655,469,656,466,660,463,659,458,661,455,665,455,672,446,665,440,662,430,658,430,656,427,653,405,650,405,649,407,644,406,645,412,638,413,635,412,634,414,631,414,627,418,624,405,624,400,630,393,631,381,635,379,635,376,640,373,643,366,656,356,657,355,656,348,657,345,661,345,662,346,666,345,675,350,679,350,688,345,696,348,700,348,701,350,702,350,710,342,716,339,720,335,725,334,729,326,735,327,736,329,744,322,749,321,751,319,756,317,760,309,769,302,770,295,772,292,777,289,780,283,782,280,783,274,788,271,790,268,789,264,791,261,788,256,788,246,785,236,779,227,778,220,780,216,776,210,773,208,774,201,768,194,767,190,770,185,770,182,765,178,763,174,760,172,756,163,759,156,759,149,763,145,765,141,760,134,776,125,779,116,784,115,787,111,790,112,790,114,801,118,803,114,800,109,804,106,811,106,814,103,815,97,818,94,823,92,822,88,826,85,829,81,833,80,843,88,847,102,845,107,848,111,842,120,843,123,850,127,855,132,852,137,853,140,849,141,847,144,852,154,850,157,848,158,851,167,848,171,849,175,853,187,862,189,868,193,866,196,867,200,864,204,862,214,878,224,875,233,877,240,877,243,880,247,897,238,898,232,907,222,911,223,914,218,917,217,921,213,924,213,925,206,922,199,924,199,929,214,931,216,940,220,942,218,947,219,954,222,963,215,967,217,970,221,972,221,977,226,984,225,1000,261,997,280,992,289,987,292,976,289,984,297,986,309,981,309,975,314,977,321,973,327,973,332,977,337,971,340,969,343,966,366,956,372,953,376,948,380,946,390,949,397,951,408,950,415,947,418,943,429,946,433,946,440,945,446,948,450,945,454,944,454,941,469,947,476,951,490,946,496,944,500,945,503,935,514,931,525,932,529,934,530,936,536,935,542,937,546,935,550,935,564,934,570,940,572,941,575,947,579,950,591,955,594,956,598,947,607,946,612,941,613,938,616,936,625,937,628,933,633,933,637,930,642,933,647,942,650,946,643,956,642,957,648,961,653,963,660,963,664,964,669,972,671,973,674,970,679,963,686,957,699,959,707,967,708,967,718,963,723,953,729,955,734,951,739,948,741,947,747,948,751,952,751,966,762,967,766,976,774,978,778,984,783,986,794,984,798,985,801,982,804,983,809,982,816,981,817,976,817,972,818,970,822,957,822,955,826,948,829,944,829,941,827,935,828,933,831,934,840,928,844,922,843,919,839,912,837,911,832,905,825,895,818,890,821,888,825,880,826,878,828,876,829,874,834,871,835,872,838]]},{"n":"Tiltil","p":"Chacabuco","r":[[507,1,510,4,511,19,502,27,497,27,490,35,485,38,490,42,491,51,496,55,492,60,494,63,490,69,491,75,488,78,487,82,497,90,497,97,491,112,494,121,491,126,494,130,494,135,499,138,502,145,504,147,503,151,498,153,493,159,489,158,486,156,484,156,479,154,474,154,471,152,460,157,457,162,452,159,441,160,444,164,444,170,441,174,436,187,428,188,428,189,425,186,426,180,422,178,424,164,422,159,414,160,403,163,398,157,391,154,386,157,380,154,377,154,375,157,371,157,372,156,365,146,365,143,363,143,360,139,361,137,361,129,357,122,357,116,360,106,352,100,358,91,363,88,362,85,363,80,367,79,360,71,357,61,357,55,354,51,353,41,360,33,368,33,374,35,377,33,382,33,392,27,395,31,398,31,405,27,407,19,411,14,414,14,416,8,420,7,426,10,433,5,437,6,442,4,449,0,451,3,462,5,468,2,472,2,475,5,480,4,485,8,490,4,496,5,503,1,506,2]]},{"n":"Melipilla","p":"Melipilla","r":[[166,521,174,520,180,517,183,511,183,508,178,508,176,506,174,507,167,503,166,502,167,497,165,496,163,492,151,485,149,478,151,471,144,470,142,469,146,457,152,454,162,457,164,453,164,444,170,439,171,432,174,431,182,432,188,429,190,425,193,425,195,422,197,409,198,408,205,411,211,408,214,411,219,411,226,406,238,407,237,404,242,402,242,397,245,399,247,397,245,394,249,395,253,390,254,387,257,388,256,384,260,382,269,385,275,390,280,389,283,390,289,390,292,387,302,386,308,390,312,386,321,389,327,387,333,391,337,391,351,388,361,381,369,380,375,385,381,384,387,385,391,387,393,390,394,397,400,404,401,410,400,413,393,417,391,421,390,426,385,432,383,433,379,429,370,426,366,427,361,434,358,435,353,434,352,436,349,444,343,440,337,441,335,438,330,435,325,435,321,438,317,439,313,470,309,469,316,475,315,480,315,483,318,486,317,489,313,492,306,498,306,504,310,506,320,509,327,514,339,512,346,514,349,517,354,519,357,523,364,524,369,528,370,526,374,527,376,525,377,541,376,542,373,563,378,568,377,575,379,585,380,604,385,614,379,612,367,599,357,597,351,602,346,602,332,597,329,599,324,599,319,619,311,630,308,631,301,630,293,633,290,632,286,633,282,636,282,640,278,642,275,641,272,639,267,641,261,640,253,635,250,625,244,626,235,620,232,615,228,610,221,610,218,608,219,600,213,592,214,586,213,581,206,579,204,583,198,581,187,585,186,587,188,591,183,598,176,597,172,592,167,585,162,570,151,554,150,550,151,539,145,534,155,531,157,532,158,526,163,521]]},{"n":"San Pedro","p":"Melipilla","r":[[77,656,74,658,75,661,72,665,73,669,69,672,69,674,72,676,71,678,65,685,66,682,60,680,58,676,57,672,54,670,51,667,38,665,30,662,24,663,25,650,22,648,18,649,14,647,10,649,8,645,2,644,4,640,0,633,2,628,6,628,12,620,23,615,69,582,73,587,81,586,82,531,83,523,87,520,92,519,99,528,103,525,107,525,109,523,113,522,120,527,123,531,128,533,131,531,136,533,141,533,150,537,151,544,150,550,151,554,162,570,170,589,176,597,183,598,185,596,188,591,186,586,191,583,198,581,204,583,206,579,213,581,214,586,213,592,219,600,218,608,221,610,228,610,232,615,235,620,244,626,250,625,253,635,261,640,257,648,261,659,255,663,247,673,244,674,240,673,234,675,224,675,213,683,207,691,205,691,201,695,198,695,196,697,192,696,189,699,189,703,187,705,179,702,176,702,168,706,167,711,162,706,156,703,154,700,153,695,155,686,151,684,145,685,143,680,140,678,137,674,134,674,132,676,111,663,98,660,93,660,84,658,82,660]]},{"n":"Alhué","p":"Melipilla","r":[[385,614,388,617,388,626,391,628,385,644,386,646,394,647,396,649,402,651,404,649,410,652,415,651,421,657,442,646,441,644,447,637,455,635,457,636,457,641,465,647,471,649,472,653,471,657,474,661,474,664,467,669,466,680,464,681,461,686,449,684,446,682,439,683,433,687,428,689,425,688,423,695,425,698,422,712,419,713,415,712,412,714,409,713,401,718,398,730,404,748,411,754,401,758,396,763,389,766,383,770,375,771,364,768,355,770,351,766,345,771,340,771,340,774,339,775,333,775,331,778,327,776,325,777,321,775,320,772,313,767,310,767,307,766,303,767,292,767,272,762,263,754,262,748,257,748,251,741,248,737,248,730,242,723,230,716,228,705,230,703,228,697,218,692,214,687,213,683,218,679,225,675,234,675,240,673,244,674,249,672,255,663,261,659,257,648,261,640,267,641,272,639,275,641,278,642,282,640,282,636,286,633,290,632,293,633,301,630,308,631,311,630,319,619,324,599,329,599,332,597,346,602,351,602,355,598,359,597,369,600,379,612]]}]}</script>
+<script>
+  // Número de WhatsApp y llamadas (formato 569XXXXXXXX, sin + ni espacios)
+  var PHONE = "56926351188";
+
+  var wa = function (msg) { return "https://wa.me/" + PHONE + (msg ? "?text=" + encodeURIComponent(msg) : ""); };
+
+  // Las 52 comunas de la Región Metropolitana (límites simplificados y proyectados a coordenadas del SVG).
+  // Alimentan el mapa, el buscador y el formulario.
+  var MAP = JSON.parse(document.getElementById("rm-data").textContent);
+  var COMUNAS = MAP.c.map(function (c) { return c.n; }).sort(function (a, b) { return a.localeCompare(b, "es"); });
+  var norm = function (s) { return s.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().replace(/\s+/g, " ").trim(); };
+  var sel = document.getElementById("f-comuna"), dl = document.getElementById("comunas-rm");
+  COMUNAS.forEach(function (c) {
+    sel.add(new Option(c, c));
+    var o = document.createElement("option"); o.value = c; dl.appendChild(o);
+  });
+
+  var busca = document.getElementById("f-busca"), res = document.getElementById("cov-result");
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function showMiss(text) {
+    res.hidden = false; res.className = "cov-result miss"; res.textContent = text;
+  }
+  function showHit(name, fromGeo) {
+    res.hidden = false; res.className = "cov-result"; res.textContent = "";
+    var msg = name === "La Granja" ? "Estás en nuestra comuna base: La Granja." :
+      (fromGeo ? "Estás en " + name + ". Sí, llegamos." : "Sí, llegamos a " + name + ".");
+    res.appendChild(document.createTextNode(msg));
+    var a = document.createElement("a");
+    a.className = "btn btn-primary"; a.href = wa("Hola SafeRed, necesito un servicio en " + name + ". "); a.target = "_blank"; a.rel = "noopener";
+    var ic = document.createElement("span"); ic.className = "i i-wa"; a.appendChild(ic);
+    a.appendChild(document.createTextNode("Cotizar en " + name));
+    res.appendChild(a);
+  }
+
+  // ---- Mapa SVG ----
+  var NS = "http://www.w3.org/2000/svg", svg = document.getElementById("rm-map");
+  var mk = function (tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  };
+  var FULL = [0, 0, MAP.w, MAP.h], vb = FULL.slice(), G = {};
+  var gAreas = mk("g", {}, svg), gOver = mk("g", {}, svg);
+
+  MAP.c.forEach(function (c) {
+    var d = "", big = null, bigA = 0, x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    c.r.forEach(function (r) {
+      var A = 0;
+      d += "M" + r[0] + " " + r[1];
+      for (var i = 0; i < r.length; i += 2) {
+        if (i) d += "L" + r[i] + " " + r[i + 1];
+        x0 = Math.min(x0, r[i]); x1 = Math.max(x1, r[i]); y0 = Math.min(y0, r[i + 1]); y1 = Math.max(y1, r[i + 1]);
+        var j = (i + 2) % r.length; A += r[i] * r[j + 1] - r[j] * r[i + 1];
+      }
+      d += "Z";
+      if (Math.abs(A) > bigA) { bigA = Math.abs(A); big = r; }
+    });
+    // centroide del anillo principal
+    var cx = 0, cy = 0, A2 = 0;
+    for (var i = 0; i < big.length; i += 2) {
+      var j = (i + 2) % big.length, f = big[i] * big[j + 1] - big[j] * big[i + 1];
+      A2 += f; cx += (big[i] + big[j]) * f; cy += (big[i + 1] + big[j + 1]) * f;
+    }
+    var p = mk("path", { d: d, "class": "cm" + (c.n === "La Granja" ? " base" : "") }, gAreas);
+    mk("title", {}, p).textContent = c.n;
+    p.addEventListener("click", function () { select(c.n); busca.value = c.n; });
+    G[c.n] = { el: p, rings: c.r, box: [x0, y0, x1, y1], c: [cx / (3 * A2), cy / (3 * A2)] };
+  });
+
+  var BASE = G["La Granja"].c;
+  var route = mk("path", { "class": "route", d: "" }, gOver);
+  var baseRing = mk("circle", { "class": "pin-ring", cx: BASE[0], cy: BASE[1], r: 6 }, gOver);
+  var basePin = mk("circle", { "class": "pin-base", cx: BASE[0], cy: BASE[1], r: 6 }, gOver);
+  var userRing = mk("circle", { "class": "pin-ring user", r: 5, visibility: "hidden" }, gOver);
+  var userPin = mk("circle", { "class": "pin-user", r: 5, visibility: "hidden" }, gOver);
+  var resetBtn = document.getElementById("map-reset"), current = null;
+
+  function setVB(v) {
+    vb = v; svg.setAttribute("viewBox", v.join(" "));
+    var r = v[2] / 110; // los marcadores mantienen su tamaño en pantalla al hacer zoom
+    [baseRing, basePin].forEach(function (e) { e.setAttribute("r", r); });
+    [userRing, userPin].forEach(function (e) { e.setAttribute("r", r * 0.85); });
+  }
+  function zoomTo(t) {
+    if (reduce) return setVB(t);
+    var from = vb.slice(), t0 = performance.now();
+    (function step(now) {
+      var k = Math.min(1, (now - t0) / 650), e = 1 - Math.pow(1 - k, 3);
+      setVB(from.map(function (v, i) { return v + (t[i] - v) * e; }));
+      if (k < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  function frame(box) {
+    var ratio = MAP.w / MAP.h, cx = (box[0] + box[2]) / 2, cy = (box[1] + box[3]) / 2;
+    var w = Math.max(box[2] - box[0], (box[3] - box[1]) * ratio, 150) * 1.5, h = w / ratio;
+    return [cx - w / 2, cy - h / 2, w, h];
+  }
+  function select(name, userPt) {
+    if (current) G[current].el.classList.remove("sel");
+    current = name; var g = G[name]; g.el.classList.add("sel");
+    gAreas.appendChild(g.el); // trae la comuna al frente para que se vea su borde completo
+    var to = userPt || g.c, b = g.box;
+    if (name !== "La Granja") {
+      var mx = (BASE[0] + to[0]) / 2, my = (BASE[1] + to[1]) / 2, dx = to[0] - BASE[0], dy = to[1] - BASE[1];
+      route.setAttribute("d", "M" + BASE[0] + " " + BASE[1] + " Q" + (mx - dy * 0.25) + " " + (my + dx * 0.25) + " " + to[0] + " " + to[1]);
+      b = [Math.min(b[0], BASE[0]), Math.min(b[1], BASE[1]), Math.max(b[2], BASE[0]), Math.max(b[3], BASE[1])];
+    } else {
+      route.setAttribute("d", "");
+    }
+    [userRing, userPin].forEach(function (e) {
+      e.setAttribute("visibility", userPt ? "visible" : "hidden");
+      if (userPt) { e.setAttribute("cx", userPt[0]); e.setAttribute("cy", userPt[1]); }
+    });
+    zoomTo(frame(b)); resetBtn.hidden = false;
+    showHit(name, !!userPt);
+  }
+  resetBtn.addEventListener("click", function () {
+    if (current) G[current].el.classList.remove("sel");
+    current = null; route.setAttribute("d", "");
+    [userRing, userPin].forEach(function (e) { e.setAttribute("visibility", "hidden"); });
+    zoomTo(FULL); resetBtn.hidden = true;
+  });
+  setVB(FULL);
+
+  // ---- Galería: foto ampliada ----
+  var lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap");
+  document.querySelectorAll(".shot").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var im = b.querySelector("img");
+      lbImg.src = im.src; lbImg.alt = im.alt; lbCap.textContent = b.dataset.cap;
+      if (lb.showModal) lb.showModal(); else lb.setAttribute("open", "");
+    });
+  });
+  var lbClose = function () { if (lb.close) lb.close(); else lb.removeAttribute("open"); };
+  document.getElementById("lb-close").addEventListener("click", lbClose);
+  lb.addEventListener("click", function (e) { if (e.target === lb) lbClose(); });
+
+  // ---- Buscador por nombre ----
+  busca.addEventListener("input", function () {
+    var q = norm(busca.value);
+    if (q.length < 3) { res.hidden = true; return; }
+    var starts = COMUNAS.filter(function (c) { return norm(c).indexOf(q) === 0; });
+    var hit = COMUNAS.filter(function (c) { return norm(c) === q; })[0] || (starts.length === 1 ? starts[0] : null);
+    if (hit) select(hit);
+    else if (!starts.length) showMiss("No encontramos esa comuna en la Región Metropolitana. Revisa cómo la escribiste o pregúntanos por WhatsApp.");
+    else res.hidden = true;
+  });
+
+  // ---- Usar mi ubicación: se busca en qué comuna cae el punto (sin enviar la ubicación a ningún servidor) ----
+  function inside(pt, r) {
+    var c = false;
+    for (var i = 0, j = r.length - 2; i < r.length; j = i, i += 2) {
+      if ((r[i + 1] > pt[1]) !== (r[j + 1] > pt[1]) &&
+          pt[0] < (r[j] - r[i]) * (pt[1] - r[i + 1]) / (r[j + 1] - r[i + 1]) + r[i]) c = !c;
+    }
+    return c;
+  }
+  var geoBtn = document.getElementById("geo-btn"), geoLabel = document.getElementById("geo-label");
+  function geoDone() { geoBtn.classList.remove("loading"); geoLabel.textContent = "Usar mi ubicación"; }
+  geoBtn.addEventListener("click", function () {
+    if (!navigator.geolocation) return showMiss("Tu navegador no permite usar la ubicación. Escribe tu comuna arriba.");
+    geoBtn.classList.add("loading"); geoLabel.textContent = "Buscando tu ubicación...";
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      geoDone();
+      var pt = [(pos.coords.longitude * MAP.k - MAP.minx) * MAP.s, (-pos.coords.latitude - MAP.miny) * MAP.s];
+      var hit = null;
+      for (var n in G) { if (G[n].rings.some(function (r) { return inside(pt, r); })) { hit = n; break; } }
+      if (hit) { busca.value = hit; select(hit, pt); }
+      else showMiss("Tu ubicación está fuera de la Región Metropolitana. Escríbenos por WhatsApp y vemos si podemos llegar.");
+    }, function () {
+      geoDone();
+      showMiss("No pudimos obtener tu ubicación. Revisa el permiso de ubicación del navegador o escribe tu comuna arriba.");
+    }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 600000 });
+  });
+  document.querySelectorAll(".js-wa").forEach(function (a) {
+    a.href = wa(a.dataset.msg); a.target = "_blank"; a.rel = "noopener";
+  });
+  document.querySelectorAll(".js-tel").forEach(function (a) { a.href = "tel:+" + PHONE; });
+
+  document.getElementById("lead").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var f = e.target, ok = true;
+    ["nombre", "comuna", "servicio"].forEach(function (n) {
+      var el = f.elements[n], bad = !el.value.trim();
+      el.closest(".field").classList.toggle("invalid", bad);
+      if (bad && ok) { el.focus(); ok = false; }
+    });
+    if (!ok) return;
+    var msg = "Hola SafeRed, soy " + f.nombre.value.trim() + " de " + f.comuna.value +
+      ". Necesito: " + f.servicio.value + "." + (f.detalle.value.trim() ? " " + f.detalle.value.trim() : "");
+    var url = wa(msg), fb = document.getElementById("wa-fallback");
+    fb.href = url;
+    var w = window.open(url, "_blank");
+    if (!w) fb.hidden = false; // si el navegador bloquea la ventana, mostramos el enlace directo
+  });
+  document.querySelectorAll("#lead input, #lead select").forEach(function (el) {
+    el.addEventListener("input", function () { el.closest(".field").classList.remove("invalid"); });
+  });
+
+  // Aparición de secciones al entrar en pantalla
+  var items = document.querySelectorAll("[data-reveal]");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  // Botón WhatsApp: un llamado de atención a los 4 s, una sola vez por visita
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    setTimeout(function () {
+      var fab = document.querySelector(".wa-fab"), tip = document.getElementById("wa-tip");
+      fab.classList.add("nudge"); tip.classList.add("show");
+      setTimeout(function () { tip.classList.remove("show"); }, 6000);
+    }, 4000);
+  }
+</script>
+</body>
+</html>
