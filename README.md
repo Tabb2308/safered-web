@@ -1,6 +1,8 @@
 # SafeRed
 
-### 👉 [Ver la página en vivo: tabb2308.github.io/safered-web](https://tabb2308.github.io/safered-web/)
+### 👉 [Ver la página en vivo: safered-web.vercel.app](https://safered-web.vercel.app/)
+
+Publicada en **Vercel** (dirección principal, con encabezados de seguridad de `vercel.json`) y en GitHub Pages como copia: [tabb2308.github.io/safered-web](https://tabb2308.github.io/safered-web/). Cada `git push` a `main` actualiza ambas.
 
 Landing page de **SafeRed**: gasfitería e instalaciones de redes de gas y agua en la Región Metropolitana, con Instalador Certificado SEC.
 
