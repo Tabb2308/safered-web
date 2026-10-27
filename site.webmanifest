@@ -1,0 +1,15 @@
+{
+  "name": "SafeRed · Gasfitería certificada SEC",
+  "short_name": "SafeRed",
+  "description": "Redes de gas y agua, calefonts bajo norma y emergencias en toda la Región Metropolitana.",
+  "lang": "es-CL",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#0a2a57",
+  "icons": [
+    { "src": "img/logo/icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "img/logo/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
