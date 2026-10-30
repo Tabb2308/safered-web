@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://safered-web.vercel.app/sitemap.xml
+Sitemap: https://safered.cl/sitemap.xml

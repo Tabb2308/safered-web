@@ -3,5 +3,5 @@ Contact: https://wa.me/56926351188
 Contact: tel:+56926351188
 Expires: 2027-10-30T00:00:00.000Z
 Preferred-Languages: es
-Canonical: https://safered-web.vercel.app/.well-known/security.txt
-Policy: https://safered-web.vercel.app/privacidad
+Canonical: https://safered.cl/.well-known/security.txt
+Policy: https://safered.cl/privacidad

@@ -1,6 +1,6 @@
 # SafeRed
 
-### 👉 [Ver la página en vivo: safered-web.vercel.app](https://safered-web.vercel.app/)
+### 👉 [Ver la página en vivo: safered.cl](https://safered.cl/)
 
 Publicada en **Vercel** (dirección principal, con encabezados de seguridad de `vercel.json`) y en GitHub Pages como copia: [tabb2308.github.io/safered-web](https://tabb2308.github.io/safered-web/). Cada `git push` a `main` actualiza ambas.
 
