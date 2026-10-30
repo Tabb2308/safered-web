@@ -2,7 +2,7 @@
 
 ### 👉 [Ver la página en vivo: safered.cl](https://safered.cl/)
 
-Publicada en **Vercel** (dirección principal, con encabezados de seguridad de `vercel.json`) y en GitHub Pages como copia: [tabb2308.github.io/safered-web](https://tabb2308.github.io/safered-web/). Cada `git push` a `main` actualiza ambas.
+Publicada en **Vercel** con el dominio propio **safered.cl** (encabezados de seguridad en `vercel.json`). Cada `git push` a `main` la actualiza automáticamente.
 
 Landing page de **SafeRed**: gasfitería e instalaciones de redes de gas y agua en la Región Metropolitana, con Instalador Certificado SEC.
 
@@ -33,7 +33,7 @@ vercel.json         Encabezados de seguridad (si se publica en Vercel)
 - **Formulario:** no envía datos a ningún servidor; limpia y acota el texto y abre WhatsApp con el mensaje.
 - **Ubicación:** se procesa solo en el teléfono del visitante para saber su comuna.
 - **Enlaces externos** con `rel="noopener noreferrer"`.
-- **En Vercel**, `vercel.json` agrega HSTS, `X-Frame-Options`, `Permissions-Policy` y protección contra incrustación (`frame-ancestors`). GitHub Pages no permite encabezados propios; ahí rige la política declarada en `index.html`.
+- **En Vercel**, `vercel.json` agrega HSTS, `X-Frame-Options`, `Permissions-Policy` y protección contra incrustación (`frame-ancestors`). 
 
 ## Ver en local
 
