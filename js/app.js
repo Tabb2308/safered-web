@@ -8,7 +8,7 @@
   var PHONE = "56926351188";
   // Líneas de WhatsApp: al cotizar, el visitante elige a cuál escribir
   var WA_LINES = [
-    { label: "Línea principal", num: "56926351188", show: "+56 9 2635 1188" },
+    { label: "Felipe", num: "56926351188", show: "+56 9 2635 1188" },
     { label: "Eduardo", num: "56984201227", show: "+56 9 8420 1227" }
   ];
   var $ = function (id) { return document.getElementById(id); };

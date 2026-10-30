@@ -40,9 +40,9 @@
 <script>document.documentElement.className+=" js"</script>
 <link rel="preload" href="fonts/archivo-safered.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="img/hero-equipo.webp" as="image" fetchpriority="high">
-<link rel="stylesheet" href="css/styles.css?v=5">
+<link rel="stylesheet" href="css/styles.css?v=6">
 <script src="js/comunas.js?v=1" defer></script>
-<script src="js/app.js?v=4" defer></script>
+<script src="js/app.js?v=5" defer></script>
 </head>
 <body>
 <!-- Símbolo SafeRed: cañería en S con llama (gas) y gota (agua); versión clara para fondos oscuros -->
@@ -300,8 +300,7 @@
             <span class="count" id="detalle-count" aria-live="off">0 / 500</span>
           </div>
           <button class="btn btn-primary" type="submit"><span class="i i-wa" aria-hidden="true"></span>Enviar por WhatsApp</button>
-          <a id="wa-fallback" class="btn btn-ghost" href="#" target="_blank" rel="noopener noreferrer" hidden>Abrir WhatsApp con mi mensaje</a>
-          <p class="form-note"><span class="i i-lock" aria-hidden="true"></span>No guardamos tus datos: se abre WhatsApp con tu mensaje listo.</p>
+          <p class="form-note"><span class="i i-lock" aria-hidden="true"></span><span>Tus datos se usan solo para responder tu solicitud y no se guardan en esta página. <a href="privacidad.html">Política de privacidad</a></span></p>
         </form>
       </div>
     </div>
@@ -325,7 +324,7 @@
     </nav>
     <div class="foot-col">
       <p class="foot-title">Contacto</p>
-      <a href="https://wa.me/56926351188?text=Hola%20SafeRed%2C%20necesito%20ayuda%20con%20" target="_blank" rel="noopener noreferrer" data-direct="1">WhatsApp línea principal: +56 9 2635 1188</a>
+      <a href="https://wa.me/56926351188?text=Hola%20SafeRed%2C%20necesito%20ayuda%20con%20" target="_blank" rel="noopener noreferrer" data-direct="1">WhatsApp Felipe: +56 9 2635 1188</a>
       <a href="https://wa.me/56984201227?text=Hola%20SafeRed%2C%20necesito%20ayuda%20con%20" target="_blank" rel="noopener noreferrer" data-direct="1">WhatsApp Eduardo: +56 9 8420 1227</a>
       <a class="js-tel" href="tel:+56926351188">Llamar: +56 9 2635 1188</a>
       <span>La Granja, Región Metropolitana</span>
@@ -333,7 +332,7 @@
   </div>
   <div class="wrap foot-bottom">
     <span>© <span id="year">2026</span> SafeRed</span>
-    <button class="link-btn js-privacy" type="button">Privacidad</button>
+    <a class="link-btn" href="privacidad.html">Política de privacidad</a>
     <span class="foot-safe"><span class="i i-shield" aria-hidden="true"></span>Sin cookies ni rastreo</span>
   </div>
 </footer>
@@ -359,6 +358,7 @@
     <li><strong>Lo que nos cuentes, solo para atenderte.</strong>Los datos que nos envíes por WhatsApp o por teléfono se usan únicamente para responder tu solicitud.</li>
     <li><strong>Funciona sin señal.</strong>Después de tu primera visita, la página queda guardada en tu teléfono para que puedas ver nuestro contacto aunque estés sin internet.</li>
   </ul>
+  <p style="margin:-8px 0 16px"><a class="link" href="privacidad.html">Leer la política de privacidad completa</a></p>
   <button class="btn btn-ghost" id="privacy-close" type="button">Entendido</button>
 </dialog>
 

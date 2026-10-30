@@ -381,3 +381,16 @@ form .btn{width:100%}
   header,.wa-fab,.wa-tip,.offline-bar,.pipes,#geo-btn,.map-card{display:none!important}
   .js .rise,.js [data-reveal]{opacity:1;transform:none}
 }
+
+/* Página de política de privacidad */
+.legal{max-width:760px;padding-block:40px 64px}
+.legal h1{font-size:clamp(2rem,6vw,2.8rem);font-weight:800;font-stretch:125%;letter-spacing:-.03em}
+.legal h2{font-size:1.35rem;margin:34px 0 10px}
+.legal h3{font-size:1.05rem;margin:18px 0 6px;color:var(--blue-700)}
+.legal p,.legal li{color:var(--ink);line-height:1.65}
+.legal p{margin-top:10px}
+.legal ul{padding-left:20px;display:grid;gap:8px;margin-top:8px}
+.legal-meta{color:var(--muted)!important;font-size:.92rem}
+.legal-summary{background:var(--blue-50);border:1px solid #c9d9ee;border-radius:var(--r);padding:16px 18px;margin-top:20px!important}
+.legal-back{margin-top:36px!important}
+.form-note a,.modal a.link{color:var(--blue-700);font-weight:600}
