@@ -40,9 +40,9 @@
 <script>document.documentElement.className+=" js"</script>
 <link rel="preload" href="fonts/archivo-safered.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="img/hero-equipo.webp" as="image" fetchpriority="high">
-<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/styles.css?v=5">
 <script src="js/comunas.js?v=1" defer></script>
-<script src="js/app.js?v=3" defer></script>
+<script src="js/app.js?v=4" defer></script>
 </head>
 <body>
 <!-- Símbolo SafeRed: cañería en S con llama (gas) y gota (agua); versión clara para fondos oscuros -->
@@ -325,8 +325,9 @@
     </nav>
     <div class="foot-col">
       <p class="foot-title">Contacto</p>
-      <a class="js-wa" data-msg="Hola SafeRed, necesito ayuda con " href="https://wa.me/56926351188">WhatsApp</a>
-      <a class="js-tel" href="tel:+56926351188">+56 9 2635 1188</a>
+      <a href="https://wa.me/56926351188?text=Hola%20SafeRed%2C%20necesito%20ayuda%20con%20" target="_blank" rel="noopener noreferrer" data-direct="1">WhatsApp línea principal: +56 9 2635 1188</a>
+      <a href="https://wa.me/56984201227?text=Hola%20SafeRed%2C%20necesito%20ayuda%20con%20" target="_blank" rel="noopener noreferrer" data-direct="1">WhatsApp Eduardo: +56 9 8420 1227</a>
+      <a class="js-tel" href="tel:+56926351188">Llamar: +56 9 2635 1188</a>
       <span>La Granja, Región Metropolitana</span>
     </div>
   </div>
@@ -342,6 +343,12 @@
   <img id="lb-img" alt="">
   <p id="lb-cap"></p>
   <button class="btn btn-ghost" id="lb-close" type="button">Cerrar</button>
+</dialog>
+<dialog class="modal wa-pick" id="wa-pick" aria-labelledby="wa-pick-title">
+  <h2 id="wa-pick-title"><span class="i i-wa" aria-hidden="true"></span>¿A quién le escribes?</h2>
+  <p class="wa-pick-lead">Ambos números son de SafeRed. Elige uno y se abrirá WhatsApp con tu mensaje listo.</p>
+  <div class="wa-options" id="wa-options"></div>
+  <button class="btn btn-ghost" id="wa-pick-close" type="button">Cancelar</button>
 </dialog>
 <dialog class="modal" id="privacy" aria-labelledby="privacy-title">
   <h2 id="privacy-title"><span class="i i-lock" aria-hidden="true"></span>Tu privacidad</h2>

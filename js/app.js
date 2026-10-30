@@ -4,8 +4,13 @@
 (function () {
   "use strict";
 
-  // Número de WhatsApp y llamadas (formato 569XXXXXXXX, sin + ni espacios)
+  // Número para llamadas (formato 569XXXXXXXX, sin + ni espacios)
   var PHONE = "56926351188";
+  // Líneas de WhatsApp: al cotizar, el visitante elige a cuál escribir
+  var WA_LINES = [
+    { label: "Línea principal", num: "56926351188", show: "+56 9 2635 1188" },
+    { label: "Eduardo", num: "56984201227", show: "+56 9 8420 1227" }
+  ];
   var $ = function (id) { return document.getElementById(id); };
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -22,6 +27,36 @@
   document.querySelectorAll(".js-tel").forEach(function (a) { a.href = "tel:+" + PHONE; });
   // Todo enlace que abre otra pestaña queda aislado de esta página
   document.querySelectorAll('a[target="_blank"]').forEach(function (a) { a.rel = "noopener noreferrer"; });
+
+  // ---- Selector de WhatsApp: cualquier enlace a wa.me abre el menú para elegir la línea ----
+  var pick = $("wa-pick"), opts = $("wa-options");
+  var openPick = function (msg) {
+    opts.textContent = "";
+    WA_LINES.forEach(function (l) {
+      var a = document.createElement("a");
+      a.className = "wa-opt"; a.target = "_blank"; a.rel = "noopener noreferrer";
+      a.href = "https://wa.me/" + l.num + (msg ? "?text=" + encodeURIComponent(msg) : "");
+      var ic = document.createElement("span"); ic.className = "i i-wa"; ic.setAttribute("aria-hidden", "true");
+      var tx = document.createElement("span"); tx.className = "wa-opt-text";
+      var s1 = document.createElement("strong"); s1.textContent = l.label;
+      var s2 = document.createElement("span"); s2.textContent = l.show;
+      tx.appendChild(s1); tx.appendChild(s2);
+      a.appendChild(ic); a.appendChild(tx);
+      a.addEventListener("click", function () { setTimeout(function () { if (pick.close) pick.close(); }, 50); });
+      opts.appendChild(a);
+    });
+    if (pick.showModal) pick.showModal(); else pick.setAttribute("open", "");
+  };
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="https://wa.me/"]') : null;
+    if (!a || a.classList.contains("wa-opt") || a.dataset.direct === "1") return;
+    e.preventDefault();
+    var t = null;
+    try { t = new URL(a.href).searchParams.get("text"); } catch (err) {}
+    openPick(t || "");
+  });
+  $("wa-pick-close").addEventListener("click", function () { if (pick.close) pick.close(); });
+  pick.addEventListener("click", function (e) { if (e.target === pick && pick.close) pick.close(); });
 
   // Foto principal: si no carga, se muestra el respaldo de color
   var hero = document.querySelector(".photo img");
@@ -228,10 +263,7 @@
     if (!ok) return;
     var extra = clean(detalle.value, 500);
     var msg = "Hola SafeRed, soy " + nombre + " de " + comuna + ". Necesito: " + servicio + "." + (extra ? " " + extra : "");
-    var url = wa(msg), fb = $("wa-fallback");
-    fb.href = url;
-    var w = window.open(url, "_blank", "noopener");
-    if (!w) fb.hidden = false; // si el navegador bloquea la ventana, se muestra el enlace directo
+    openPick(msg); // el visitante elige a qué línea de WhatsApp enviar
   });
   form.querySelectorAll("input, select").forEach(function (el) {
     el.addEventListener("input", function () { el.closest(".field").classList.remove("invalid"); el.setAttribute("aria-invalid", "false"); });
